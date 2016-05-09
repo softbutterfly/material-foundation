@@ -1,24 +1,12 @@
-// Utility Color Classes
-
-//.success {
+// Color Classes
 //
-//}
-
-// Google Color Palette defined: http://www.google.com/design/spec/style/color.html
-
-
-$materialize-red: (
-  "base":       #e51c23,
-  "lighten-5":  #fdeaeb,
-  "lighten-4":  #f8c1c3,
-  "lighten-3":  #f3989b,
-  "lighten-2":  #ee6e73,
-  "lighten-1":  #ea454b,
-  "darken-1":   #d0181e,
-  "darken-2":   #b9151b,
-  "darken-3":   #a21318,
-  "darken-4":   #8b1014,
-);
+// Taken from Materializecss [1] due to it's mnemonic names for color clases.
+// Bassed on Googles's Material Design Color Palette [2]
+//
+// References:
+// [1] http://materializecss.com/getting-started.html#sass
+// [2] http://www.google.com/design/spec/style/color.html
+//
 
 $red: (
   "base":       #F44336,
@@ -338,29 +326,27 @@ $shades: (
 );
 
 $colors: (
-  "materialize-red": $materialize-red,
-  "red": $red,
-  "pink": $pink,
-  "purple": $purple,
-  "deep-purple": $deep-purple,
-  "indigo": $indigo,
+  "amber": $amber,
   "blue": $blue,
-  "light-blue": $light-blue,
+  "blue-grey": $blue-grey,
+  "brown": $brown,
   "cyan": $cyan,
-  "teal": $teal,
+  "deep-orange": $deep-orange,
+  "deep-purple": $deep-purple,
   "green": $green,
+  "grey": $grey,
+  "indigo": $indigo,
+  "light-blue": $light-blue,
   "light-green": $light-green,
   "lime": $lime,
-  "yellow": $yellow,
-  "amber": $amber,
   "orange": $orange,
-  "deep-orange": $deep-orange,
-  "brown": $brown,
-  "blue-grey": $blue-grey,
-  "grey": $grey,
-  "shades": $shades
+  "pink": $pink,
+  "purple": $purple,
+  "red": $red,
+  "shades": $shades,
+  "teal": $teal,
+  "yellow": $yellow,
 );
-
 
 // Color Classes
 
@@ -368,18 +354,18 @@ $colors: (
   @each $color_type, $color_value in $color {
     @if $color_type == "base" {
       .#{$color_name} {
-        background-color: $color_value !important;
+        background-color: $color_value; // !important;
       }
       .#{$color_name}-text {
-        color: $color_value !important;
+        color: $color_value; // !important;
       }
     }
     @else {
       .#{$color_name}.#{$color_type} {
-        background-color: $color_value !important;
+        background-color: $color_value; // !important;
       }
       .#{$color_name}-text.text-#{$color_type} {
-        color: $color_value !important;
+        color: $color_value; // !important;
       }
     }
   }
@@ -388,10 +374,10 @@ $colors: (
 // Shade classes
 @each $color, $color_value in $shades {
   .#{$color} {
-    background-color: $color_value !important;
+    background-color: $color_value; // !important;
   }
   .#{$color}-text {
-    color: $color_value !important;
+    color: $color_value; // !important;
   }
 }
 
